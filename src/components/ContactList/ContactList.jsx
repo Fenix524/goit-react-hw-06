@@ -7,7 +7,6 @@ const ContactList = () => {
 	const dispatch = useDispatch()
 	const contactList = useSelector(state => state.contacts.items)
 	const filter = useSelector(state => state.filters.name)
-	console.log(contactList)
 
 	const contactArrByFilters = (filterText, contactArr) => {
 		return contactArr.filter(contact =>
