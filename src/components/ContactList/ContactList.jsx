@@ -5,8 +5,8 @@ import css from './ContactList.module.css'
 
 const ContactList = () => {
 	const dispatch = useDispatch()
-	const contactList = useSelector(state => state.contacts)
-	const filter = useSelector(state => state.filters)
+	const contactList = useSelector(state => state.contacts.items)
+	const filter = useSelector(state => state.filters.name)
 	console.log(contactList)
 
 	const contactArrByFilters = (filterText, contactArr) => {

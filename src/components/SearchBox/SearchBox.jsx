@@ -4,7 +4,7 @@ import css from './SearchBox.module.css'
 
 const SearchBox = () => {
 	const dispatch = useDispatch()
-	const searchFilters = useSelector(state => state.filters)
+	const searchFilters = useSelector(state => state.filters.name)
 	console.log(searchFilters)
 	return (
 		<div className={css.SearchBox}>
