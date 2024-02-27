@@ -8,8 +8,8 @@ import {
 	REHYDRATE,
 } from 'redux-persist'
 import persistStore from 'redux-persist/es/persistStore'
-import { contactReducer } from './slices/contacts.slice'
-import { filterReducer } from './slices/filters.slice'
+import { contactReducer } from './contacts/contacts.slice'
+import { filterReducer } from './filters/filters.slice'
 
 export const store = configureStore({
 	reducer: {
