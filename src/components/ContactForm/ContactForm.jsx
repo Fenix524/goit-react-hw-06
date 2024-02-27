@@ -4,8 +4,10 @@ import * as Yup from 'yup'
 import css from './ContactForm.module.css'
 
 import { useId } from 'react'
+import { useDispatch } from 'react-redux'
+import { addContact } from '../../redux/contacts/contacts.slice'
 
-const ContactForm = ({ handleSubmit }) => {
+const ContactForm = () => {
 	const contactNameId = useId()
 	const contactPhoneId = useId()
 
@@ -25,8 +27,11 @@ const ContactForm = ({ handleSubmit }) => {
 			.required('Required'),
 	})
 
+	const dispatch = useDispatch()
 	const onSubmit = (values, actions) => {
-		handleSubmit(values)
+		const { contactname, contactphone } = values
+		dispatch(addContact({ name: contactname, number: contactphone }))
+
 		actions.resetForm()
 	}
 

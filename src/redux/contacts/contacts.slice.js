@@ -17,9 +17,6 @@ export const contactsSlice = createSlice({
 	reducers: {
 		addContact: {
 			reducer(state, { payload }) {
-				if (state.items.some(contact => contact.id === payload.id)) {
-					return
-				}
 				state.items.push(payload)
 			},
 			prepare({ name, number }) {
